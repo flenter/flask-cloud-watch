@@ -1,4 +1,7 @@
 box: wercker/python
+services:
+  - wercker/redis
+
 # Build definition
 build:
   # The steps that will be executed on build
@@ -22,7 +25,6 @@ build:
     # A custom script step, name value is used in the UI
     # and the code value contains the command that get executed
     - script:
-        name: echo python information
+        name: Run tests
         code: |
-          echo "python version $(python --version) running"
-          echo "pip version $(pip --version) running"
+          python app_test.py
