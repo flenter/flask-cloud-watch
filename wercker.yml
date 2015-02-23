@@ -6,6 +6,7 @@ services:
 build:
   # The steps that will be executed on build
   steps:
+
     # A step that sets up the python virtual environment
     - virtualenv:
         name: setup virtual environment
@@ -28,3 +29,4 @@ build:
         name: Run tests
         code: |
           python app_test.py
+
